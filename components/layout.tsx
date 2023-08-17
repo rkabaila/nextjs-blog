@@ -6,8 +6,12 @@ import Link from "next/link";
 
 const name = "Rimas";
 export const siteTitle = "Next.js Sample Website";
+interface LayoutProps {
+  children: React.JSX.Element[];
+  home?: boolean;
+}
 
-export default function Layout({ children, home }) {
+const Layout = ({ children, home }: LayoutProps) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -66,4 +70,6 @@ export default function Layout({ children, home }) {
       )}
     </div>
   );
-}
+};
+
+export default Layout;
